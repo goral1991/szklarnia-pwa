@@ -1,7 +1,7 @@
 const CACHE_NAME = "szklarnia-cache-v1";
 const urlsToCache = [
   "/",
-  "index.php",
+  "index.html",
   "style.css",
   "manifest.json",
   "icons/icon-192.png",
