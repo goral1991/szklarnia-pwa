@@ -1,0 +1,1051 @@
+
+
+html, body {
+  margin: 0;
+  padding: 0;
+  bottom: 0;
+ height: 115vh; /* Ustawienie pełnej wysokości dla strony */
+  overflow-x: hidden;
+  background-color: #222;
+  box-sizing: border-box;
+   overflow-y: auto; /* Przewijanie dla całej strony */
+ 
+}
+
+body:not(.light-mode) {
+
+  background: linear-gradient(135deg, #363636, #222);
+
+  color: white;
+  
+}
+
+
+
+.min-width-150 {
+  min-width: 150px;
+}
+
+.safe-top {
+  padding-top: env(safe-area-inset-top, 1rem);
+}
+
+.tile .label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+.tile .label i {
+  font-size: 1.1rem;
+}
+
+.tile .value {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.form-section {
+  background: #333;
+  padding: 1rem;
+  border-radius: 10px;
+  max-width: 600px;
+  width: 100%;
+  margin: 2rem auto 1rem;
+  color: white;
+}
+
+.content-wrapper {
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 16px;  /* lub 1rem */
+  padding-right: 16px; /* lub 1rem */
+  box-sizing: border-box;
+}
+
+.form-section input,
+.form-section select,
+.form-section button {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: none;
+  margin-bottom: 1rem;
+  box-sizing: border-box;
+}
+
+
+
+#themeToggle {
+  outline: none;
+  box-shadow: none;
+}
+
+.bottom-nav {
+  position: fixed;
+  bottom: 0px;
+  left: 0;
+  width: 100%;
+  height: 90px;
+  background: #1c1c1c;
+  z-index: 1000;
+    box-sizing: border-box;
+            margin-bottom: 0px;
+}
+
+
+           
+
+			
+
+.bottom-nav::before {
+  content: "";
+  position: absolute;
+  top: -42px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 85px;
+  height: 85px;
+  background: #222; /* tło aplikacji */
+  border-radius: 50%;
+  z-index: 0;
+}
+
+.main-button-wrapper {
+  position: absolute;
+  top: -35px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+.main-btn {
+  width: 70px;
+  height: 70px;
+  background: linear-gradient(135deg, #28a745 0%, #1e6a32 100%);
+  border: none;
+  border-radius: 50%;
+  color: white;
+  font-size: 0.55rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}
+
+.main-btn.btn-open {
+  background: linear-gradient(135deg, #28a7e0 0%, #1e4a6a 100%);
+}
+
+.nav-item {
+  position: absolute;
+  top: 10px;
+  width: 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-item.left {
+  left: calc(50% - 35%); /* od środka w lewo */
+}
+
+.nav-item.right {
+  right: calc(50% - 35%); /* od środka w prawo */
+}
+
+.nav-icon {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+}
+
+.nav-label {
+  color: #ccc;
+  font-size: 0.65rem;
+  margin-top: 2px;
+}
+
+#valveBtn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#valveBtn i {
+  font-size: 1.5em;
+  margin-bottom: 4px;
+  line-height: 1;
+}
+
+
+body.light-mode .bottom-nav {
+  background: #fff; /* jasne tło */
+  color: #212529;
+}
+
+body.light-mode .nav-icon,
+body.light-mode .nav-label {
+  color: #212529;
+}
+
+body.light-mode .bottom-nav::before {
+  background: #f8f9fa; /* subtelniejszy odcień */
+}
+
+
+.logo-text {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #ffffff;
+}
+
+body.light-mode .logo-text {
+  color: #212529; /* nadpisanie koloru w trybie jasnym */
+}
+
+
+.schedule-title {
+  font-size: 0.8rem;
+  font-weight: 300;
+  color: #cccccc;
+  margin-top: 0.5rem;
+  margin-bottom: 0.1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+    font-weight: 600;
+    text-shadow: 0 0 5px rgba(0,0,0,0.5);
+
+}
+
+body.light-mode .schedule-title {
+  color: #000000; /* lub np. #222 dla ciemniejszego czarnego */
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+
+}
+
+.schedule-list {
+  max-width: 600px;
+  margin: 1rem auto 4rem;
+   overflow-y: auto;
+   padding-bottom: 100px;
+    
+}
+
+.schedule-item {
+  background: #2a2a2a;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.schedule-item span {
+  font-weight: 600;
+}
+
+#scheduleItems {
+  
+  -webkit-overflow-scrolling: touch; /* ważne dla iOS */
+}
+
+
+body.light-mode {
+  background-color: #f8f9fa;
+  color: #212529;
+}
+
+body.light-mode .tile,
+body.light-mode .form-section,
+body.light-mode .schedule-item,
+body.light-mode .container-fluid.bg-dark {
+  background-color: #ffffff !important;
+  color: #212529;
+}
+
+body.light-mode .form-section input::placeholder,
+body.light-mode .form-section textarea::placeholder {
+  color: #6c757d;
+}
+
+body.light-mode .form-section input,
+body.light-mode .form-section select,
+body.light-mode .form-section textarea {
+  background-color: #f1f1f1;
+  color: #212529;
+  border: 1px solid #ccc;
+}
+
+body.light-mode .btn-outline-light {
+  border-color: #212529;
+  color: #212529;
+}
+
+body.light-mode .btn-outline-light:hover {
+  background-color: #212529;
+  color: #ffffff;
+}
+
+body.light-mode #themeToggle {
+  color: #212529 !important;
+}
+
+body.light-mode .tile {
+  background-color: #f8f9fa; /* jasne tło (np. Bootstrap light) */
+  color: #000;              /* czarny tekst */
+  border: 1px solid #ddd;   /* opcjonalna delikatna ramka */
+}
+
+body.light-mode .tile .label span {
+  color: #000;
+}
+
+body.light-mode .tile .value {
+  color: #000;
+}
+
+
+
+
+
+
+/* Modal dialog – zawężony do 600px */
+#wateringModal .modal-dialog {
+  max-width: 600px;
+  width: 100%;
+  height: 100vh;
+  margin: 2rem auto 1rem; /* identycznie jak .form-section */
+  padding-left: 16px;
+  padding-right: 16px;
+  box-sizing: border-box;
+}
+
+
+/* Modal content */
+#wateringModal .modal-content {
+  background: #222 !important;
+  border: none !important;
+  box-shadow: none !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Light mode background */
+body.light-mode #wateringModal .modal-content {
+    background-color: #ffffff !important;
+}
+
+/* Modal body */
+#wateringModal .modal-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 0;
+}
+
+/* Timer display */
+#wateringTimerDisplay {
+  font-size: 18vw;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+}
+
+/* Light mode cyfry */
+body.light-mode #wateringTimerDisplay {
+  color: #212529;
+}
+
+
+.modal-header {
+  border-bottom: none;
+}
+
+
+/* Domyślnie (ciemny tryb) - jasna ikonka */
+.three-dots-btn {
+  color: #ffffff;
+}
+
+/* Jasny tryb - ciemna ikonka */
+body.light-mode .three-dots-btn {
+  color: #000000;
+}
+
+/* Dropdown w trybie jasnym - jasne tło i ciemny tekst */
+body.light-mode .dropdown-menu {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+/* Dropdown elementy - tekst ciemny w jasnym trybie */
+body.light-mode .dropdown-menu .dropdown-item {
+  color: #000000;
+}
+
+/* Opcjonalnie hover efekt */
+body.light-mode .dropdown-menu .dropdown-item:hover {
+  background-color: #f0f0f0;
+}
+
+/* W trybie ciemnym (domyślnie Bootstrap) nie trzeba zmian – ale możesz dodać: */
+body:not(.light-mode) .dropdown-menu {
+  background-color: #2a2a2a;
+  color: #ffffff;
+}
+body:not(.light-mode) .dropdown-menu .dropdown-item {
+  color: #ffffff;
+}
+
+
+#historyModal .modal-body {
+  max-height: 60vh;  /* lub np. 400px */
+  overflow-y: auto;
+}
+
+.btn-remove i.bi-trash {
+  color: white;
+}
+
+body.light-mode .btn-remove .bi-trash {
+  color: #000000;
+}
+
+.modal.show {
+  background-color: rgba(0, 0, 0, 0.7); /* domyślnie jest 0.5 */
+}
+
+body.light-mode .modal.show {
+  background-color: rgba(255, 255, 255, 0.7); /* jasna mgiełka */
+}
+
+
+
+
+
+
+
+
+
+  /* Białe napisy i przezroczyste tło */
+  .flatpickr-calendar {
+    background-color: rgba(0, 0, 0, 0.0); /* lekko przezroczyste tło */
+    color: white;
+    border: none;
+    box-shadow: none;
+  }
+
+  .flatpickr-calendar .flatpickr-days,
+  .flatpickr-calendar .flatpickr-months {
+    background: transparent;
+  }
+
+  .flatpickr-calendar .flatpickr-day,
+  .flatpickr-calendar .flatpickr-weekday,
+  .flatpickr-calendar .flatpickr-month,
+  .flatpickr-calendar .flatpickr-current-month,
+  .flatpickr-calendar .flatpickr-prev-month,
+  .flatpickr-calendar .flatpickr-next-month {
+    color: white;
+  }
+
+
+.watering-day {
+  background-color: #316396 !important;  /* niebieskie tło */
+  color: white !important;               /* biały tekst */
+
+}
+
+
+  /* Usunięcie niepotrzebnych obramowań i podświetleń */
+  .flatpickr-day:hover,
+  .flatpickr-day:focus {
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+  .flatpickr-day.today {
+    border-color: white;
+  }
+
+  .flatpickr-day.selected {
+    background: #3399ff;
+    color: white;
+  }
+
+  /* Strzałki nawigacyjne (miesiąc wstecz/do przodu) */
+.flatpickr-prev-month,
+.flatpickr-next-month {
+  color: white !important;
+  fill: white;
+}
+
+.flatpickr-monthDropdown-months {
+  background-color: #222 !important;
+  color: white !important;
+  border: none;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+
+/* Miesiąc aktywny i hover */
+.flatpickr-monthDropdown-month:hover,
+.flatpickr-monthDropdown-month:focus,
+.flatpickr-monthDropdown-month.selected {
+  background-color: #3399ff;
+  color: white;
+}
+
+/* Strzałka przy wyborze roku (na niektórych motywach) */
+.numInputWrapper span.arrowUp,
+.numInputWrapper span.arrowDown {
+  border-color: white transparent transparent transparent;
+}
+
+/* Domyślny kolor strzałek: biały */
+.flatpickr-prev-month,
+.flatpickr-next-month,
+.flatpickr-prev-month svg,
+.flatpickr-next-month svg {
+  color: white !important;
+  fill: white !important;
+}
+
+/* Kolor strzałek po najechaniu: niebieski */
+.flatpickr-prev-month:hover,
+.flatpickr-next-month:hover,
+.flatpickr-prev-month:focus,
+.flatpickr-next-month:focus,
+.flatpickr-prev-month:hover svg,
+.flatpickr-next-month:hover svg,
+.flatpickr-prev-month:focus svg,
+.flatpickr-next-month:focus svg {
+  color: #3399ff !important;
+  fill: #3399ff !important;
+}
+
+/* Domyślny kolor strzałek roku: biały */
+.numInputWrapper span.arrowUp,
+.numInputWrapper span.arrowDown {
+  border-color: white transparent transparent transparent !important;
+}
+
+/* Po najechaniu: niebieskie */
+.numInputWrapper span.arrowUp:hover,
+.numInputWrapper span.arrowDown:hover,
+.numInputWrapper span.arrowUp:focus,
+.numInputWrapper span.arrowDown:focus {
+  border-color: #3399ff transparent transparent transparent !important;
+}
+
+
+
+  .label i {
+    margin-right: 0.5rem;
+  }
+
+  .value {
+    font-weight: 600;
+    font-size: 1.2rem;
+  }
+
+
+.glass-schedule {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 1rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  color: white;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+.schedule-entry {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 1rem;
+}
+
+.schedule-entry:last-child {
+  border-bottom: none;
+}
+
+.schedule-entry button {
+  margin-left: 1rem;
+}
+
+.safe-top {
+  background: transparent; /* lub inherit, jeśli masz ogólne tło */
+  padding: 1rem 1.5rem;
+  color: white;
+  border-bottom: none; /* brak obramowania */
+}
+
+/* Opcjonalnie: ładna typografia */
+.logo-text {
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* Punkt serca (heartbeatDot) – subtelne światło */
+#heartbeatDot {
+  background-color: #4caf50; /* lub inny kolor stanu */
+  box-shadow: 0 0 6px rgba(76, 175, 80, 0.6); /* delikatny glow */
+}
+
+/* Dropdown menu nadal może być szkliste lub nie */
+.dropdown-menu {
+  background-color: #222; /* lub półprzezroczyste, jeśli chcesz */
+  color: white;
+}
+
+
+
+
+.glass-tile {
+  background: rgba(255, 255, 255, 0.07);
+  border-radius: 1rem;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  color: #fff;
+  font-size: 0.95rem;
+}
+
+.glass-tile .label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+}
+
+.glass-tile .value {
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+@media (max-width: 576px) {
+  .glass-tile {
+    padding: 0.75rem 1rem !important;
+    font-size: 0.85rem;
+  }
+
+  .glass-tile .value {
+    font-size: 0.9rem;
+  }
+
+  .glass-tile .label i {
+    font-size: 1rem;
+  }
+}
+
+.more-icon {
+  font-size: 1.2rem;
+  color: #ccc;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.more-icon:hover {
+  color: #fff;
+}
+
+/* Kontener z pogodą */
+.container-weather {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center; /* wyrównanie pionowe */
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Prognoza: kontener kafelków */
+.weather-forecast {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  flex: 1;
+  align-items: center; /* wyrównanie pionowe */
+}
+
+/* Pojedynczy kafelek prognozy */
+.weather-forecast > div {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 1rem;
+  padding: 0.75rem;
+  min-width: 80px;
+  max-width: 80px;
+  height: 90px;
+  box-sizing: border-box;
+  text-align: center;
+  color: #fff;
+  font-size: 0.85rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Aktualna pogoda - dostosowana do kafelków */
+.glass-currentweather {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 1rem;
+  backdrop-filter: blur(5px);
+  padding: 0.75rem;
+  min-width: 80px !important;
+  max-width: 80px !important;
+  height: 90px;
+  box-sizing: border-box;
+  text-align: center;
+  color: #fff;
+  font-size: 0.85rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Ikony w obu sekcjach */
+.weather-forecast > div img,
+.glass-currentweather img {
+  width: 20px;
+  height: 20px;
+  margin-bottom: 0.3rem;
+}
+
+/* Teksty temperatur */
+#currentTemp,
+.weather-forecast > div div {
+  margin: 0;
+  line-height: 1;
+}
+
+
+/* Tekst sekcji pogody */
+body.light-mode .schedule-title,
+body.light-mode .glass-currentweather,
+body.light-mode .glass-currentweather * {
+  color: #000000 !important; /* czarny tekst */
+  text-shadow: none !important; /* usunięcie cieni */
+}
+
+/* Ikona pogody – tylko jeśli jej kolor się nie zmienia automatycznie */
+body.light-mode .glass-currentweather img {
+  filter: invert(0%); /* upewnia się, że ikony nie są odwrócone */
+}
+
+/* Tło, jeśli szklany efekt staje się zbyt jasny */
+body.light-mode .glass-currentweather {
+  background-color: rgba(255, 255, 255, 0.6); /* jasne, lekko przezroczyste tło */
+  border-radius: 10px;
+  backdrop-filter: blur(5px);
+}
+
+/* Prognoza (jeśli kafelki mają tekst) */
+body.light-mode .weather-forecast,
+body.light-mode .weather-forecast * {
+  color: #000 !important;
+  text-shadow: none !important;
+  
+}
+
+body.light-mode .weather-forecast > * {
+  background-color: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(4px);
+  border-radius: 10px;
+  padding: 0.5rem;
+  color: #000;
+  text-shadow: none;
+}
+
+
+
+
+/* Tryb jasny – nadpisanie */
+body.light-mode .modal-content.bg-dark {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
+
+/* Formularz – pola input/select też w jasnym stylu */
+body.light-mode .modal-content.bg-dark .form-control,
+body.light-mode .modal-content.bg-dark .form-select {
+  background-color: #f8f9fa;
+  color: #000;
+  border-color: #ccc;
+}
+
+/* Labelki */
+body.light-mode .modal-content.bg-dark .form-label {
+  color: #000;
+}
+
+/* Przycisk zamknięcia – ciemny krzyżyk w jasnym trybie */
+body.light-mode .btn-close-white {
+  filter: invert(1); /* zamienia biały na czarny */
+}
+
+
+/* Jasny tryb dla modalu info */
+body.light-mode .modal-content.bg-dark {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
+
+/* Linki w jasnym trybie — czarne */
+body.light-mode .modal-content.bg-dark a.link-light {
+  color: #000000 !important;
+  text-decoration: underline;
+}
+
+/* Inputy, jeśli by się pojawiły (tu ich nie ma, ale dla spójności) */
+body.light-mode .modal-content.bg-dark .form-control,
+body.light-mode .modal-content.bg-dark .form-select {
+  background-color: #f8f9fa;
+  color: #000;
+  border-color: #ccc;
+}
+
+/* Przycisk zamknięcia - zamiana białego krzyżyka na ciemny */
+body.light-mode .btn-close-white {
+  filter: invert(1);
+}
+
+
+
+body.light-mode .modal-content.bg-dark {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
+
+body.light-mode .btn-close-white {
+  filter: invert(1); /* czarny przycisk zamknięcia */
+}
+
+/* Kafelki pod wykresem - tło jasne i tekst czarny */
+body.light-mode .modal-body > .d-flex > div {
+  background-color: #f0f0f0 !important;
+  color: #000000 !important;
+}
+
+/* Opcjonalnie: obramowanie kafelków dla lepszego kontrastu */
+body.light-mode .modal-body > .d-flex > div {
+  border: 1px solid #ccc;
+}
+
+/* Canvas - jeśli chcesz, możesz ustawić tło (np. białe) */
+body.light-mode #sensorChart {
+  background-color: #fff;
+}
+
+
+/* Jasny tryb dla modalu podlewania */
+body.light-mode #wateringModal .modal-content {
+  background-color: #ffffff;
+  color: #000000;
+  border-radius: 10px;
+  padding: 1rem;
+}
+
+/* Przycisk w modalu - jaśniejszy */
+body.light-mode #wateringModal .btn-secondary {
+  background-color: #6c757d;  /* możesz dopasować na jaśniejszy odcień */
+  color: #fff;
+  border: none;
+}
+
+body.light-mode #wateringModal .btn-secondary:hover {
+  background-color: #5a6268; /* ciemniejszy odcień na hover */
+  color: #fff;
+}
+
+
+/* Jasny tryb dla modalu historii podlewania */
+body.light-mode .modal-content.bg-dark {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
+
+/* Przycisk zamknięcia - zamiana białego krzyżyka na czarny */
+body.light-mode .btn-close-white {
+  filter: invert(1);
+}
+
+/* Tekst w paragrafie z klasą text-white-50 - w trybie jasnym ciemniejszy odcień */
+body.light-mode .modal-body p.text-white-50 {
+  color: #666666 !important;
+  font-weight: 600;
+}
+
+
+/* Kalendarz historii - upewnij się, że jest czytelny (jeśli używasz FullCalendar lub innej biblioteki) */
+body.light-mode #historyCalendar {
+  background-color: #fff;
+  color: #000;
+}
+
+
+body.light-mode .flatpickr-calendar {
+  background-color: #fff !important;
+  color: #000 !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+body.light-mode .flatpickr-calendar .flatpickr-days,
+body.light-mode .flatpickr-calendar .flatpickr-months {
+  background: transparent;
+}
+
+/* Teksty nagłówków, dni tygodnia, dni miesiąca na czarno */
+body.light-mode
+.flatpickr-calendar .flatpickr-day,
+body.light-mode
+.flatpickr-calendar .flatpickr-weekday,
+body.light-mode
+.flatpickr-calendar .flatpickr-month,
+body.light-mode
+.flatpickr-calendar .flatpickr-current-month,
+body.light-mode
+.flatpickr-calendar .flatpickr-prev-month,
+body.light-mode
+.flatpickr-calendar .flatpickr-next-month {
+  color: #000 !important;
+}
+
+/* Dni podlewania - niebieskie tło, białe litery */
+body.light-mode .watering-day {
+  background-color: #316396 !important;
+  color: white !important;
+}
+
+/* Hover i focus na dni - delikatny szary */
+body.light-mode
+.flatpickr-day:hover,
+body.light-mode
+.flatpickr-day:focus {
+  background: rgba(0, 0, 0, 0.1) !important;
+  color: #000 !important;
+}
+
+/* Dzień dzisiejszy - niebieska obwódka */
+body.light-mode .flatpickr-day.today {
+  border-color: #316396 !important;
+}
+
+/* Wybrany dzień - mocne niebieskie tło i biały tekst */
+body.light-mode .flatpickr-day.selected {
+  background: #3399ff !important;
+  color: white !important;
+}
+
+/* Strzałki nawigacyjne - czarne */
+body.light-mode
+.flatpickr-prev-month,
+body.light-mode
+.flatpickr-next-month {
+  color: #000 !important;
+  fill: #000 !important;
+}
+
+/* Dropdown miesiąca - jasne tło, czarny tekst */
+body.light-mode .flatpickr-monthDropdown-months {
+  background-color: #f0f0f0 !important;
+  color: #000 !important;
+  border: 1px solid #ccc !important;
+}
+
+/* Aktywny i hover miesiąca - jasnoniebieskie tło */
+body.light-mode
+.flatpickr-monthDropdown-month:hover,
+body.light-mode
+.flatpickr-monthDropdown-month:focus,
+body.light-mode
+.flatpickr-monthDropdown-month.selected {
+  background-color: #3399ff !important;
+  color: white !important;
+}
+
+/* Strzałki roku - czarne */
+body.light-mode .numInputWrapper span.arrowUp,
+body.light-mode .numInputWrapper span.arrowDown {
+  border-color: #000 transparent transparent transparent !important;
+}
+
+/* Hover strzałek roku - niebieskie */
+body.light-mode .numInputWrapper span.arrowUp:hover,
+body.light-mode .numInputWrapper span.arrowDown:hover,
+body.light-mode .numInputWrapper span.arrowUp:focus,
+body.light-mode .numInputWrapper span.arrowDown:focus {
+  border-color: #3399ff transparent transparent transparent !important;
+}
+
+body.light-mode
+.flatpickr-prev-month,
+body.light-mode
+.flatpickr-next-month,
+body.light-mode
+.flatpickr-prev-month svg,
+body.light-mode
+.flatpickr-next-month svg {
+  color: #000 !important;
+  fill: #000 !important;
+}
+
+body.light-mode .numInputWrapper span.arrowUp,
+body.light-mode .numInputWrapper span.arrowDown {
+  border-color: #000 transparent transparent transparent !important;
+}
+
+
+/* Tryb ciemny - domyślny (jak masz teraz) */
+#historyList .list-group-item {
+  background-color: #222; /* ciemne tło */
+  color: white;
+  border-color: transparent;
+}
+
+/* Tryb jasny */
+body.light-mode #historyList .list-group-item {
+   background-color: #ffffff; /* ciemne tło */
+  color: #000 !important;
+  border-color: transparent;
+}
+
+body.light-mode .btn-close-white {
+  filter: invert(0); /* usuwa inwersję, czyli czarna ikona */
+  background-color: transparent;
+}
+
+.light-hours {
+  font-weight: 300; /* lub lighter */
+  color: #888888;      /* opcjonalnie jaśniejszy kolor */
+}
